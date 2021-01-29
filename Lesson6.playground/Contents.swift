@@ -15,9 +15,11 @@ struct University<T: Experienced>{
     mutating func substract() -> T{
         return elements.removeLast()
     }
-    subscript(index: Int) -> String {
+    subscript(index: Int)  -> String? {
+        guard index < elements.count else {
+        return nil
+        }
         return "Teacher's info: \(elements[index].major), Experience: \(elements[index].experience) years"
-        
     }
     func filter(_ predicate: (T) -> Bool) -> University<T> {
         var filteredList: [T] = []
