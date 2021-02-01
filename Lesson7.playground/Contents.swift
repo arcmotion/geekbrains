@@ -122,4 +122,6 @@ do{
     print("No matching book in th store")
 }catch BookStoreError.outOfStock {
     print("This book is out of stock")
+}catch let error {
+    print(error)
 }
